@@ -48,16 +48,16 @@ const SearchBar = () => {
   ];
 
   return (
-    <div className={"relative w-[676px] bg-white"}>
-      <div className="flex items-center justify-between relative h-[50px]">
+    <div className={"relative lg:w-[676px] bg-white"}>
+      <div className="flex items-center justify-between relative flex-col gap-2 lg:gap-0 lg:flex-row lg:h-[50px] ">
         {/* Job Title Input */}
-        <div className="flex items-center justify-between relative w-[522px]">
+        <div className="flex items-center justify-between relative lg:w-[522px]">
           <div
-            className={`flex items-center relative w-full border border-[#89969C] border-r-0 rounded-tl-lg rounded-br-none divider
+            className={`flex items-center relative w-full border border-[#89969C] rounded-lg lg:border-r-0 lg:rounded-tl-lg lg:rounded-tr-none lg:rounded-br-none divider
            ${
              focusedInput === "jobTitle"
-               ? "border-b-[#eeeeee]"
-               : "rounded-bl-lg"
+               ? "lg:border-b-[#eeeeee] lg:rounded-bl-none"
+               : ""
            }`}
           >
             <LupeIcon className="w-5 h-5 text-gray-500 ml-3" />
@@ -82,7 +82,7 @@ const SearchBar = () => {
           {focusedInput === "jobTitle" && (
             <ul
               className={
-                "absolute left-0 w-full border border-t-0 border-[#89969C] rounded-lg rounded-t-none pt-2 mt-4 max-h-48 overflow-y-scroll custom-scrollbar bottom-0 transform translate-y-full box-border"
+                "hidden lg:block lg:absolute lg:left-0 lg:w-full lg:border lg:border-t-0 border-[#89969C] lg:rounded-lg lg:rounded-t-none lg:pt-2 lg:mt-4 lg:max-h-48 lg:overflow-y-scroll custom-scrollbar lg:bottom-0 lg:transform lg:translate-y-full lg:box-border"
               }
             >
               {jobSuggestions.map((suggestion, index) => (
@@ -98,13 +98,13 @@ const SearchBar = () => {
           )}
         </div>
         {/* Location Input */}
-        <div className="flex items-center justify-between relative w-[247px]">
+        <div className="flex items-center justify-between relative lg:w-[247px]">
           <div
-            className={`flex items-center relative w-full border border-[#89969C] border-l-0 rounded-tr-lg
+            className={`flex items-center relative w-full border border-[#89969C] rounded-lg lg:border-l-0 lg:rounded-tl-none lg:rounded-bl-none   lg:rounded-tr-lg
             ${
               focusedInput === "location"
-                ? "border-b-[#eeeeee] rounded-br-none"
-                : " rounded-br-lg "
+                ? "lg:border-b-[#eeeeee] lg:rounded-br-none"
+                : " "
             }`}
           >
             <MapPinIcon className="w-5 h-5 text-gray-500 ml-3" />
@@ -128,7 +128,7 @@ const SearchBar = () => {
           {focusedInput === "location" && (
             <ul
               className={
-                "absolute left-0 w-full border border-t-0 border-[#89969C] rounded-lg rounded-t-none pt-2 mt-4 max-h-48 overflow-y-scroll custom-scrollbar bottom-0 transform translate-y-full box-border"
+                "hidden lg:block lg:absolute lg:left-0 lg:w-full lg:border lg:border-t-0 lg:border-[#89969C] lg:rounded-lg lg:rounded-t-none lg:pt-2 lg:mt-4 lg:max-h-48 lg:overflow-y-scroll custom-scrollbar lg:bottom-0 lg:transform lg:translate-y-full lg:box-border"
               }
             >
               {locationSuggestions.map((suggestion, index) => (
